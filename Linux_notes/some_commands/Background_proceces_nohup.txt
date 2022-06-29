@@ -1,0 +1,22 @@
+Run scripts or commands in background
+
+
+nohup
+
+
+1.- In the follow example, nohup create a default file, in the same directory that it execute:
+
+
+    /home/$ nohup mycomand &
+
+
+    file: /home/nohup.out
+
+
+2.- To set a specific output:
+
+    nohup mycommand > mycommand.out 2>&1 &
+
+    nohup ./bpi --install /opt/ciena/loads/21.10/lineup-mdso-bpi-multi-rhel.yml > install.out 2>&1 &
+
+    nohup ./bpi --install /opt/ciena/loads/22.02/lineup-uaa-base-multi-rhel.yml > install.out 2>&1 &

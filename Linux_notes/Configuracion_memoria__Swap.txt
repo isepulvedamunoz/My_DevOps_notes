@@ -1,0 +1,69 @@
+Memoria Swap
+
+Una de las tecnicas mas sencillas de mejorar la respuesta del servidor, y protejerlo frente a errores de Memoria
+insuficiente, es añadir memoria al espacio de intercambio o memoria SWAP.
+ La memoria SWAP puede definirse como un espacio del disco duro, destinado a almacenar datos que la memoria
+ RAM no puede retener de forma temporal.
+
+ Esto permite al sistema operativo, guardar parte de su trabajo en memoria, pero solamente cuando la memoria RAM no es 
+ suficiente de retener o almacenar.
+
+ Para realizar una configuración y asignación de esta memoria, se debe realizar
+ los siguientes pasos:
+
+ Paso1 - Comprobar el file system de Swap
+
+    opcion1:    sudo swapon -s
+    opcion2:    free -m
+
+
+Paso2 - Revisar el espacio disponible en la particion del disco duro
+
+    df -h
+
+Paso3 - Crear archivo Swap
+
+    sudo dd if=/dev/zero of=/swapfile bs=1G count=4
+    file /swapfile
+    mkswap /swapfile
+    chmod 600 /swapfile
+    vi /etc/fstab
+    /swapfile none swap sw 0 0
+    cat /etc/fstab
+    swapon /swapfile
+    free -m  / l
+
+
+    References:
+
+    1   https://docs.bluehosting.cl/tutoriales/servidores/como-eliminar-el-espacio-swap-de-forma-segura.html
+    2   https://access.redhat.com/documentation/es-es/red_hat_enterprise_linux/8/html/managing_storage_devices/recommended-system-swap-space_getting-started-with-swap
+    3   https://access.redhat.com/documentation/es-es/red_hat_enterprise_linux/8/html/managing_storage_devices/creating-a-swap-file_adding-swap-space
+
+
+
+    **** Utilice los comandos free y cat /proc/swaps para verificar la cantidad y el lugar de uso de la swap.
+
+
+
+Removing a swap file
+
+    Procedure
+
+    1 At a shell prompt, execute the following command to disable the swap file, where /swapfile is the swap file:
+
+        # swapoff -v /swapfile
+
+    2 Remove its entry from the /etc/fstab file accordingly.
+
+    3 Regenerate mount units so that your system registers the new configuration:
+
+        # systemctl daemon-reload
+
+    4 Remove the actual file:
+
+        # rm /swapfile
+    
+    References
+
+    1   https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9-beta/html/managing_storage_devices/getting-started-with-swap_managing-storage-devices#removing-a-swap-file_getting-started-with-swap

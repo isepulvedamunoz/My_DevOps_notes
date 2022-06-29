@@ -1,0 +1,36 @@
+Desmontar, deshabilitar y eliminar volumen logico
+
+    Step1 - Delete entry from /etc/fstab
+
+        - vi /etc/fstab
+        - delete line that is lv 
+
+    Step2 - Unmount the partition
+
+        - umount /'punto de montaje'
+
+    Step2 - Disable LVM 
+
+        - lvchange -an /dev/'lvname'
+
+    Step3 - Delete LVM
+
+        - lvremove /dev/'lvname'
+
+    
+NOTES:
+
+    - lvscan = listar puntos de montaje
+    - lsblk = listar distribucion de discos
+
+
+Reducir volumen logico
+
+     lvreduce -r -L -10G /dev/mapper/rootvg-tmplv
+
+
+Aumentar tamaño de volumen logico
+
+    -  lvextend -r -L +10G /dev/mapper/rootvg-tmplv
+    
+    NOTA: -r , significa resize de disco

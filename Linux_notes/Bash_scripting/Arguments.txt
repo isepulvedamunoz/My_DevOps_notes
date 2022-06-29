@@ -1,0 +1,34 @@
+Arguments 
+
+    To provide arguments in our scripts, its necessary get it in the script,
+    using next comands:
+
+    $0 = Name of the Script
+    $1 to ${10} = number of the argument provided. If is more than 9, must be between keys.
+    $# = count arguments
+    $* = all arguments
+
+    example:
+
+    user@server: ./bash_example.sh "argument1" "argument2"
+
+    script:
+
+        "!/bin/bash
+
+        firstArgument=$1
+        secondArgument=$2
+
+        echo "The first arguments provided is: $firstArgument"
+        echo "The second argument provided is: $secondArgument"
+        echo "The number of arguments provided are $#"
+        echo "All arguments provided are: $*"
+
+    
+    output script:
+
+        user@server: ./bash_example.sh "argument1" "argument2"
+        The first arguments provided is argument1
+        The second arguments provided is argument2
+        The number of arguments provided are 2
+        All arguments provided are argument1 argument2

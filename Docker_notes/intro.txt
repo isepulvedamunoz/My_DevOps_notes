@@ -1,0 +1,29 @@
+Componentes DENTRO del circulo de Docker:
+
+    Docker daemon: Es el centro de docker, el corazón que gracias a el, podemos comunicarnos con los servicios de docker.
+    REST API: Como cualquier otra API, es la que nos permite visualizar docker de forma “gráfica”.
+    Cliente de docker: Gracias a este componente, podemos comunicarnos con el corazón de docker (Docker Daemon) que por defecto es la línea de comandos.
+    Dentro de la arquitectura de Docker encontramos:
+
+    Contenedores: Es la razón de ser de Docker, es donde podemos encapsular nuestras imagenes para llevarlas a otra computadora, o servidor, etc.
+    Imagenes: Son las encapsulaciones de x contenedor. Podemos correr nuestra aplicación en Java por medio de una imagen, podemos utilizar Ubuntu para correr nuestro proyecto, etc.
+    Volumenes de datos: Podemos acceder con seguridad al sistema de archivos de nuestra máquina.
+    Redes: Son las que permiten la comunicación entre contenedores.
+
+MIni resumen:
+    **Docker deamon ** es el que interactua con el OS, se comunica por medio de api rest
+    Container Es donde se aloja y corren los aplicativos
+    Images Artefacto que utiliza docker para empaquetar y distribuir los contenedores
+    Data Volumenes Es la forma que tiene docker para acceder al sistema de archivos del anfitrion de forma segura sin comprometerlo
+    network Permite la comunicación de contenedores entre si o en el mundo exterior
+
+
+
+    El contexto de build
+
+    Comandos:
+    $ docker build -t prueba .(creo la imagen)
+    $ docker run -d --rm --name app prueba (corro el contenedor)
+    en el archivo .dockerignore puedo poner todo lo que no quiero que copie del contexto de build
+    $ docker exec -it app bash (entro al contenedor y verifico que no se haya copiado lo que está en el .dockerignore)
+

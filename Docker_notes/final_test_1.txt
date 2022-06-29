@@ -1,0 +1,130 @@
+¿Cuál de los siguientes no es uno de los grandes problemas del desarrollo de software profesional?
+
+    Problemas:
+        - construir
+        - distribuir
+        - ejecutar
+
+
+2.
+¿Cuál es el principal problema que intenta resolver la virtualización?
+
+    Los 3 problemas del desarrollo.
+    Virtualización: A diferencia de un contenedor, las máquinas virtuales ejecutan 
+    un sistema operativo completo, incluido su propio kernel.
+
+
+3.
+¿En qué se parecen las máquinas virtuales y los contenedores?
+Son una unidad autocontenida preparada para ejecutar nuestras aplicaciones correctamente.
+4.
+¿Cuál de las siguientes afirmaciones es falsa?
+Docker es una aplicación que ejecuta máquinas virtuales.
+5.
+¿Cuál de las siguientes afirmaciones es verdadera?
+
+    Docker run corre un contenedor, no lo crea
+
+
+6.
+¿Cual de las siguientes no es una característica de un contenedor?
+Siempre puede acceder al filesystem completo de la máquina anfitriona.
+7.
+Indica el comando correcto para ver todos los contenedores manejados por el docker daemon.
+docker ps -a
+8.
+¿Cuál es el comando correcto para correr un contenedor de Ubuntu en modo interactivo?
+
+docker run -it ubuntu
+9.
+¿Cuál es la causa para que un contenedor se detenga?
+El proceso principal termina su ejecución.
+10.
+¿Qué ocurre si en la terminal escribes docker run -p 8080:80 nginx?
+
+    Se expone el puerto 8080 de la maquina anfitriona, y se expone el puerto
+    80 del contenedor, para exponer el servicio de nginx.
+
+11.
+Indica qué afirmación es verdadera luego de ejecutar docker run -v /home/data:/files mongo
+
+    Se crea un Bind Mounts. El directorio es donde voy a espejar mi informacion de mongo,
+    en mi maquina anfitriona.
+
+
+12.
+Indica la principal diferencia entre un volume mount y un bind mount.
+El sistema de archivos de la máquina anfitriona donde se escriben los datos de un volume mount manejado enteramente por Docker.
+13.
+¿Cuál es el comando correcto para copiar un archivo “file.txt” desde tu directorio actual al directorio “/home” del contenedor “prueba” basado en Ubuntu?
+
+    docker cp prueba.txt copytest:/testing/test.txt
+
+
+14.
+¿Cuál de las siguientes afirmaciones es falsa?
+El tag por defecto de una imagen de Docker es "latest".
+REPASAR CLASE
+15.
+¿Cuál es el comando indicado para construir una imagen llamada “mi/imagen” a partir de un Dockerfile llamado “mi.Dockerfile” utilizando el directorio actual como contexto de build?
+
+docker build -t mi/imagen -f mi.Dockerfile
+16.
+¿Cuál de las siguientes afirmaciones es verdadera?
+La primera instrucción de un Dockerfile siempre es FROM.
+17.
+Cuando construimos una imagen, la cantidad total de sus capas es...
+La cantidad de capas de la imagen base y la cantidad de instrucciones en el Dockefile.
+18.
+Para construir una imagen que contenga código de presente en el disco de la máquina anfitriona es necesario, en el Dockerfile, usar la instrucción...
+COPY
+19.
+¿Cuál de las siguientes afirmaciones es verdadera?
+El caché de build es afectado por tanto el orden de las instrucciones en el Dockerfile como también por los archivos que son utilizados o generados en cada instrucción del mismo.
+
+20.
+Para que un contenedor A pueda comunicarse con un contenedor B es necesario que...
+
+    Se debe crear una red virtual en docker, utilizando docker network connect.
+
+
+21.
+¿Cuál de las siguientes afirmaciones es verdadera?
+El compose file es un Dockerfile que puede crear múltiples imágenes.
+REPASAR CLASE
+22.
+¿Qué comando debe ejecutarse para ver, a medida que se generan, únicamente los logs del servicio "app" de un compose file con 3 servicios?
+docker logs -f app
+REPASAR CLASE
+23.
+¿Cuál es el efecto de usar el comando docker-compose build?
+Construye imágenes solo para aquellos servicios que especifican el atributo build.
+
+24.
+¿Cuál es el principal objetivo de un archivo docker-compose.override.yml?
+Optimizar la velocidad de construcción de las imágenes de los servicios de un compose file.
+REPASAR CLASE
+25.
+¿Cuál de los siguientes comandos no es válido?
+docker daemon prune
+26.
+¿Cuál es la principal diferencia entre usar SHELL y EXEC form en el CMD de un Dockerfile?
+SHELL es para ejecutar scripts de Bash, mientras que EXEC es para correr binarios ejecutables.
+REPASAR CLASE
+27.
+Dado un contenedor creado a partir de una imagen con ENTRYPOINT y CMD, ¿Cuál de las siguientes afirmaciones es verdadera?
+El contenedor se convierte en un ejecutable independiente de Docker.
+REPASAR CLASE
+28.
+¿Cuál de las siguientes afirmaciones sobre el contexto de build es falsa?
+Contiene los archivos que pueden ser utilizados por las instrucciones dentro de un Dockerfile, en tiempo de build.
+REPASAR CLASE
+29.
+¿Cuántas imágenes son generadas a partir de un Dockerfile con múltiples etapas?
+Ninguna
+REPASAR CLASE
+30.
+Dado un contenedor con el socket de docker de la máquina anfitriona montada y un cliente de docker, ¿qué efecto tiene correr comandos de docker en su interior?
+
+Crea contenedores, imágenes, etc. dentro de sí mismo, sin afectar a la máquina anfitriona.
+REPASAR CLASE

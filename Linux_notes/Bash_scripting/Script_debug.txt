@@ -1,0 +1,9 @@
+Scripts Debuging
+
+    Before execute files, there are some commands to debug the scripts:
+
+    - bash -v <name_script> : Show script and evaluated values
+    - bash -x <name_script> : Show the script, evaluated values and specific in/out.
+
+
+

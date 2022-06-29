@@ -1,0 +1,55 @@
+Variables in Bash Shell
+
+There are 2 big groups of variables in bash:
+
+Environment variables
+
+    This type of variables, help us to get info to the system in general. 
+
+User variables
+
+    This type of variables, help us to get info to the script that we are working.
+    In this case, there are 2 types of variables too, Global and local.
+
+    In the case of Global user variable, allow to get info from other script, only if 
+    is execute from the same script that was created.
+
+    And finally, Local User variable, allor to get info from the same script.
+
+    Example of User variables:
+
+
+        #!/bin/bash
+
+        option=0
+        name=Ignacio
+
+        echo "Option: $option and Name: $name"
+    
+    Example of Global User variable:
+    
+        To allow to get info from other script, its necessary export the variable,
+        and use it from the other script, for example:
+
+        Script 1:
+
+            #!/bin/bash
+
+            option=0
+            name=Ignacio
+
+            echo "Option: $option and Name: $name"
+
+            #export any variable
+            export name
+
+            #Call other Script
+            ./Script_2.sh
+
+        Script 2:
+
+             #!/bin/bash
+             echo "The name from Script 1 is: $name"
+
+
+

@@ -1,0 +1,33 @@
+Regular Expressions
+
+    When information is requested from the user, its important validate text, numbers, expresions in general,
+    like a any other programing language.
+    To apply this requirement, existing regular expresions, to validate the information
+    requested from the users, in our bash scripts.
+
+
+    Example:
+
+        #! bin/bash
+
+        identificationRegex='^[0-9]{10}$'
+        countryRegex='^EC|COL|US$'
+        dateRegex='^19|20[0-0]{2}[1-2][1-31]}$'
+
+        echo "Expresiones"
+        read -p "Enter identification: " identification
+        read -p "Enter country: " country
+        read -p "Enter date: " date
+
+    to continue, the form to validate its: 
+
+        #Identification validation
+
+        if [[ $identification =~ $identificationRegex ]]; then
+            echo "Identification $identification success"
+        else
+            echo "Identification $identification failed"
+
+        #Country validation
+
+        if [[ $country ]]

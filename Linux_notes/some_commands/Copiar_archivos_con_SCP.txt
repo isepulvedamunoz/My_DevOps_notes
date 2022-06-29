@@ -1,0 +1,5 @@
+
+
+- scp bpadmin@10.3.1.148:/var/opt/ciena/bpo_install_files/bpi-21.10-31.sh .
+
+- Enter Password

@@ -1,0 +1,36 @@
+Get variables from user
+
+To get variables provided from the user, we need the command "read", and there are some
+flags to use with the command:
+    - read -p : Allow to get text, before request data.
+    - read -s : Stealth mode, for password or sensible info.
+    - read -n : Allow delimit number of characters.
+    - $REPLY : Allow to get variable entered.
+    
+    For example:
+
+        #!bin/bash
+
+        option=0
+        name=""
+
+        echo "Enter following options:"
+        echo -n "Enter option:"
+        read
+        option=$REPLY
+        echo -n "Enter name:"
+        read
+        name=$REPLY
+        echo "Option: $option, name=$name"
+    
+    Other example with flags:
+
+        #!bin/bash
+
+        option=0
+        name=""
+
+        echo "Enter following options:"
+        read -p "Enter option:" option
+        read -p "Enter name:" name
+        echo "Option: $option, name=$name"
