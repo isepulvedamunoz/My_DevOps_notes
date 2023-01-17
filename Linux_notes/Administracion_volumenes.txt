@@ -26,11 +26,15 @@ NOTES:
 
 Reducir volumen logico
 
-     lvreduce -r -L -10G /dev/mapper/rootvg-tmplv
+     lvreduce -r -L -1G /dev/mapper/vg_sys-data
 
 
 Aumentar tamaño de volumen logico
 
     -  lvextend -r -L +10G /dev/mapper/rootvg-tmplv
+
+Aumentar tamaño, sin utilizar la partición raíz ( error: Couldn't create temporary archive name.)
+
+    - lvextend --autobackup n -r -L +10G /dev/mapper/rootvg-rootlv
     
     NOTA: -r , significa resize de disco

@@ -1,0 +1,30 @@
+Untracked files:
+    listing files that going to remove
+        
+        git clean -d -n
+
+    remove untracked files
+
+        git clean -f
+
+Branches
+
+    create branch from other one:
+
+        git checkout -b new_branch other_branch
+    
+    change Branches
+
+        git checkout other_branch
+
+    listing Branches
+
+        git branch
+
+    deleting branch in local
+
+        git branch -d name_branch
+    
+    deleting branch in remote
+
+        git push origin --delete name_branch

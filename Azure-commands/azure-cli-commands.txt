@@ -1,0 +1,18 @@
+login
+
+    az login
+
+
+mostrar subscripcion
+
+    az account show
+
+cambiar de subsricpcion
+
+    az account set --subscription DEV 
+
+
+
+Listar las ip de las subnets
+
+    az network vnet subnet list --resource-group rg-bp-dev --vnet-name vnet-bp-dev --query "[?name=='vnet-bp-dev'].id"

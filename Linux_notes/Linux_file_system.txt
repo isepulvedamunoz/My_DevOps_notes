@@ -16,3 +16,14 @@ File system structure ans its Description
 13. /run    System daemons that start very early (e.g system and udev) to store
 14. /mnt    To mount external filesystem
 15. /media  For cdrom mounts
+
+
+verify folder memory status
+
+    du -h -d l
+
+verify total memory use
+
+    free -h
+
+    lsblk
